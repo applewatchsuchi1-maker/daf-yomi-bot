@@ -2,16 +2,16 @@ app = "daf-yomi-bot"
 primary_region = "iad"
 
 [build]
-  builder = "heroku/buildpacks:20"
+  dockerfile = "Dockerfile"
 
 [[services]]
   internal_port = 3000
   protocol = "tcp"
 
   [[services.ports]]
-    handlers = ["http"]
     port = 80
+    handlers = ["http"]
 
   [[services.ports]]
-    handlers = ["tls", "http"]
     port = 443
+    handlers = ["tls", "http"]
